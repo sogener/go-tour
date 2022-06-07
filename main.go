@@ -3,7 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	var a, b, c, d = true, false, "hello", 1
+	var a, b int = 1, 2
+	c := 3
 
-	fmt.Println(a, b, c, d)
+	d, e, f := true, false, 2
+
+	fmt.Println(a, b, c, d, e, f)
+
 }
