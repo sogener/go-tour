@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	value := 0
+	value := 1
 
-	for i := 0; i < 10; i++ {
-		value += i
+	for value < 10 {
+		value += value
 	}
 
 	fmt.Println(value)
