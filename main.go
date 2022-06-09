@@ -2,19 +2,14 @@ package main
 
 import "fmt"
 
-type Vertex struct {
-	X, Y int
-}
-
-var (
-	v1 = Vertex{1, 2}
-	v2 = Vertex{X: 3}
-	v3 = Vertex{}
-
-	p = &Vertex{1, 2}
-)
-
 func main() {
-	fmt.Println(v1, v2, v3, p)
-	//	output: {1 2} {3 0} {0 0} &{1 2}
+	var phrases [2]string
+
+	phrases[0] = "Hello golang"
+	phrases[1] = "From ide"
+
+	fmt.Println(phrases[0], phrases[1])
+
+	numbers := [3]int{1, 2, 3}
+	fmt.Println(numbers)
 }
