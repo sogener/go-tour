@@ -3,11 +3,26 @@ package main
 import "fmt"
 
 func main() {
-	numbers := [6]int{1, 2, 3, 4, 5, 6}
+	names := [4]string{
+		"Gleb",
+		"Jhon",
+		"Alexander",
+		"Mike",
+	}
 
-	var sliceOne []int = numbers[1:4]
-	fmt.Println(sliceOne)
+	sliceOne := names[0:1]
+	sliceSecond := names[1:3]
 
-	numbers[2] = 10
-	fmt.Println(sliceOne)
+	// output: [Gleb] [Jhon Alexander]
+	fmt.Println(sliceOne, sliceSecond)
+
+	sliceSecond[1] = "HELLO123"
+
+	// output: [Jhon HELLO123]
+	fmt.Println(sliceSecond)
+
+	// output: [Gleb Jhon HELLO123 Mike]
+	// Изменился изначальный массив
+	fmt.Println(names)
+
 }
