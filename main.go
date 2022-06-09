@@ -3,26 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	names := [4]string{
-		"Gleb",
-		"Jhon",
-		"Alexander",
-		"Mike",
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
+
+	r := []bool{true, false, true, true, false, true}
+	fmt.Println(r)
+
+	s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
 	}
-
-	sliceOne := names[0:1]
-	sliceSecond := names[1:3]
-
-	// output: [Gleb] [Jhon Alexander]
-	fmt.Println(sliceOne, sliceSecond)
-
-	sliceSecond[1] = "HELLO123"
-
-	// output: [Jhon HELLO123]
-	fmt.Println(sliceSecond)
-
-	// output: [Gleb Jhon HELLO123 Mike]
-	// Изменился изначальный массив
-	fmt.Println(names)
-
+	fmt.Println(s)
 }
