@@ -3,13 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var phrases [2]string
+	numbers := [6]int{1, 2, 3, 4, 5, 6}
 
-	phrases[0] = "Hello golang"
-	phrases[1] = "From ide"
+	var sliceOne []int = numbers[1:4]
 
-	fmt.Println(phrases[0], phrases[1])
-
-	numbers := [3]int{1, 2, 3}
-	fmt.Println(numbers)
+	fmt.Println(sliceOne)
 }
