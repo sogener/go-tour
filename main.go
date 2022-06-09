@@ -1,36 +1,13 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
 func main() {
-	t := time.Now() // время старта
+	value := 0
 
-	fmt.Printf("Старт: %s\n", t.Format(time.RFC3339))
-
-	// очень сложные вычисления
-	go calculateSomething(1000)
-
-	// а эти еще сложнее
-	go calculateSomething(2000)
-
-	// Блокирует выполнение главной горутины.
-	// Планировщик начнёт выполнять другие не заблокированные горутины
-	time.Sleep(8 * time.Second)
-
-	fmt.Printf("Время выполнения программы: %s\n", time.Since(t))
-}
-
-func calculateSomething(n int) {
-	t := time.Now()
-
-	result := 0
-	for i := 0; i <= n; i++ {
-		result += i * 2
-		time.Sleep(time.Millisecond * 3)
+	for i := 0; i < 10; i++ {
+		value += i
 	}
 
-	fmt.Printf("Результат: %d; Прошло времени: %s\n", result, time.Since(t))
+	fmt.Println(value)
 }
