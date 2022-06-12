@@ -2,10 +2,22 @@ package main
 
 import "fmt"
 
-var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+type Vertex struct {
+	Lat, Long float64
+}
+
+// map[key] => Value
+// key => some random STRING key
+// value = Vertex{Lat, Long}
+
+// Создаём глобальную переменную и её описание (интерфейс)
+var m map[string]Vertex
 
 func main() {
-	for i, v := range pow {
-		fmt.Printf("2**%d = %d\n", i, v)
-	}
+	// Создаём эту переменную
+	m = make(map[string]Vertex)
+	// Добавляем значения
+	m["Hello123"] = Vertex{Lat: 40.2222, Long: -66.231}
+
+	fmt.Println(m["Hello123"])
 }
