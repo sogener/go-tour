@@ -7,10 +7,16 @@ type Vertex struct {
 }
 
 func main() {
-	var m = map[string]Vertex{
-		"hello1": {40.11, 2.6},
-		"hello2": {10, 20},
-	}
+	m := make(map[string]int)
 
+	m["hello1"] = 40
 	fmt.Println(m)
+
+	m["hello1"] = 20
+	fmt.Println(m)
+
+	delete(m, "hello1")
+
+	v, ok := m["hello1"]
+	fmt.Println("The value: ", v, "Present?", ok)
 }
