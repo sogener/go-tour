@@ -2,19 +2,20 @@ package main
 
 import "fmt"
 
-func sumNumbers(numberOne, numberTwo int) int {
-	return numberOne + numberTwo
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
 }
 
 func main() {
-	divideNumbers := func(numberOne, numberTwo int) int {
-		return numberOne / numberTwo
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
 	}
-
-	dividedNumber := divideNumbers(4, 2)
-	fmt.Println(dividedNumber)
-
-	result := sumNumbers(dividedNumber, 10)
-
-	fmt.Println(result)
 }
