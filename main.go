@@ -1,22 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-type Vertex struct {
-	Lat, Long float64
+var result map[string]int
+
+func wordCount(s string) map[string]int {
+	words := strings.Fields(s)
+
+	result = make(map[string]int)
+
+	for i, v := range words {
+		result[v] = i
+	}
+
+	return result
 }
 
 func main() {
-	m := make(map[string]int)
-
-	m["hello1"] = 40
-	fmt.Println(m)
-
-	m["hello1"] = 20
-	fmt.Println(m)
-
-	delete(m, "hello1")
-
-	v, ok := m["hello1"]
-	fmt.Println("The value: ", v, "Present?", ok)
+	fmt.Println(wordCount("hi hello da no"))
 }
