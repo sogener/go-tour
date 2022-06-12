@@ -1,24 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-var result map[string]int
-
-func wordCount(s string) map[string]int {
-	words := strings.Fields(s)
-
-	result = make(map[string]int)
-
-	for i, v := range words {
-		result[v] = i
-	}
-
-	return result
+func sumNumbers(numberOne, numberTwo int) int {
+	return numberOne + numberTwo
 }
 
 func main() {
-	fmt.Println(wordCount("hi hello da no"))
+	divideNumbers := func(numberOne, numberTwo int) int {
+		return numberOne / numberTwo
+	}
+
+	dividedNumber := divideNumbers(4, 2)
+	fmt.Println(dividedNumber)
+
+	result := sumNumbers(dividedNumber, 10)
+
+	fmt.Println(result)
 }
