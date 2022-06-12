@@ -6,18 +6,11 @@ type Vertex struct {
 	Lat, Long float64
 }
 
-// map[key] => Value
-// key => some random STRING key
-// value = Vertex{Lat, Long}
-
-// Создаём глобальную переменную и её описание (интерфейс)
-var m map[string]Vertex
-
 func main() {
-	// Создаём эту переменную
-	m = make(map[string]Vertex)
-	// Добавляем значения
-	m["Hello123"] = Vertex{Lat: 40.2222, Long: -66.231}
+	var m = map[string]Vertex{
+		"hello1": {40.11, 2.6},
+		"hello2": {10, 20},
+	}
 
-	fmt.Println(m["Hello123"])
+	fmt.Println(m)
 }
