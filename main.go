@@ -2,20 +2,16 @@ package main
 
 import "fmt"
 
-func adder() func(int) int {
-	sum := 0
-	return func(x int) int {
-		sum += x
-		return sum
-	}
+type Numbers struct {
+	numberOne, numberTwo int
+}
+
+func (n Numbers) sumNumbers() int {
+	return n.numberOne + n.numberTwo
 }
 
 func main() {
-	pos, neg := adder(), adder()
-	for i := 0; i < 10; i++ {
-		fmt.Println(
-			pos(i),
-			neg(-2*i),
-		)
-	}
+	n := Numbers{numberTwo: 2, numberOne: 1}
+
+	fmt.Println(n.sumNumbers())
 }
