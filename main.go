@@ -2,15 +2,16 @@ package main
 
 import "fmt"
 
-type MyString string
+type Sentence struct {
+	firstWord, secondWord string
+}
 
-func (s MyString) randomMessage() string {
-	return "hello123"
+func (s *Sentence) appendWords() string {
+	return s.firstWord + " " + s.secondWord
 }
 
 func main() {
-	message := MyString("hello")
+	sentence := Sentence{firstWord: "hello", secondWord: "yopta"}
 
-	fmt.Println(message)
-	fmt.Println(message.randomMessage())
+	fmt.Println(sentence.appendWords())
 }
