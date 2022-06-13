@@ -2,16 +2,15 @@ package main
 
 import "fmt"
 
-type Numbers struct {
-	numberOne, numberTwo int
-}
+type MyString string
 
-func sumNumbers(n Numbers) int {
-	return n.numberOne + n.numberTwo
+func (s MyString) randomMessage() string {
+	return "hello123"
 }
 
 func main() {
-	n := Numbers{numberTwo: 2, numberOne: 1}
+	message := MyString("hello")
 
-	fmt.Println(sumNumbers(n))
+	fmt.Println(message)
+	fmt.Println(message.randomMessage())
 }
